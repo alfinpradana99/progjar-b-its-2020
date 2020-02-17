@@ -16,12 +16,6 @@ try:
     baca = buka.read()
     sock.sendall(baca)
     # Look for the response
-    amount_received = 0
-    amount_expected = len(message)
-    while amount_received < amount_expected:
-        data = sock.recv(64).decode()
-        amount_received += len(data)
-        print (sys.stderr, 'received "%s"' % data)
 finally:
     print (sys.stderr, 'closing socket')
     sock.close()
