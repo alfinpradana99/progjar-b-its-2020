@@ -5,25 +5,27 @@ import socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect the socket to the port where the server is listening
-server_address = ('localhost', 10000)
-print (sys.stderr, 'connecting to %s port %s' % server_address)
+server_address = ('localhost', 30004)
+namafile = input("Nama file : ")
+namafile = namafile.strip("\n")
+print ('connecting')
 sock.connect(server_address)
 
-
 try:
-    # request file
-    file = input("masukan nama file")
-    print("sedang mengirim file ...")
-    sock.sendall(file.encode())
-    #untuk menerima file
+    # Send data
+    message = namafile
+    print ("sending", message)
+    print("ini nama file", message)
+    sock.sendall(message.encode())
+    # Look for the response
     while 1:
-        data = sock.recv(1024)
-        file = open ("dariserver_" + file, 'wb')
+        data = sock.recv(100000)
+        hasilakhir = open("file hasil" + message, 'a+b')
         if not data:
-            file.close()
+            hasilakhir.close()
             break
-        file.write(data)
-    print('file "%s" selesai diterima' % file)
+        hasilakhir.write(data)
+        # print ("received", data.decode())
 finally:
     print ('closing socket')
-    sock.close()
+    sock.close() 
