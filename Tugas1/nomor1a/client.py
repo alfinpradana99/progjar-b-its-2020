@@ -11,7 +11,7 @@ sock.connect(server_address)
 
 try:
     # Send data
-    message = 'timo.txt'
+    message = 'alfintest.txt'
     buka = open(message, 'rb')
     baca = buka.read()
     sock.sendall(baca)

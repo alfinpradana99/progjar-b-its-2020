@@ -16,7 +16,7 @@ while True:
     # Receive the data in small chunks and retransmit it
     while True:
         data = connection.recv(64)
-        buka = open('new' + '.txt', 'a+b')
+        buka = open('fileyangbaru' + '.txt', 'a+b')
         
         print (sys.stderr, 'received "%s"' % data)
 
