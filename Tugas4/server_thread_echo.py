@@ -1,13 +1,13 @@
 from socket import *
 import socket
 import threading
-import thread
+import logging
 import time
 import sys
-import json
-from chat import Chat
 
-chatserver = Chat()
+def echo_server(input_data):
+    output_data = input_data
+    return output_data
 
 class ProcessTheClient(threading.Thread):
 	def __init__(self,connection,address):
@@ -17,9 +17,9 @@ class ProcessTheClient(threading.Thread):
 
 	def run(self):
 		while True:
-			data = self.connection.recv(1024)
+			data = self.connection.recv(32)
 			if data:
-				self.connection.sendall("{}\r\n\r\n" . format(json.dumps(chatserver.proses(data))))
+				self.connection.sendall(echo_server(data))
 			else:
 				break
 		self.connection.close()
@@ -35,7 +35,7 @@ class Server(threading.Thread):
 		self.my_socket.listen(1)
 		while True:
 			self.connection, self.client_address = self.my_socket.accept()
-			print >> sys.stderr, 'connection from', self.client_address
+			logging.warning(f"connection from {self.client_address}")
 			
 			clt = ProcessTheClient(self.connection, self.client_address)
 			clt.start()
