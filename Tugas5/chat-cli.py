@@ -32,9 +32,9 @@ class ChatClient:
             elif (command=='logout'):
                 return self.logout()
             else:
-                return "*Maaf, command tidak benar"
+                return "*Sorry, wrong command"
         except IndexError:
-                return "-Maaf, command tidak benar"
+                return "-Sorry, wrong command"
     def sendstring(self,string):
         try:
             self.sock.sendall(string.encode())
