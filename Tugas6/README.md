@@ -5,15 +5,15 @@ NRP  : 05111740000191
 
 ### Terminal server_thread_http.py
 
-![SS Terminal Server](img/server.jpg)
+![SS Terminal Server](img/server.JPG)
 
 ### Request Postman
 
-![SS Terminal Server](img/postman.jpg)
+![SS Terminal Server](img/postman.JPG)
 
 ### Response Server
 
-![SS Response1](img/respon1.jpg)
+![SS Response1](img/respon1.JPG)
 
 ### Request Browser
 
@@ -21,8 +21,8 @@ NRP  : 05111740000191
 
 ### Response Server
 
-![SS Response2](img/respon2.jpg)
+![SS Response2](img/respon2.JPG)
 
 ### Network Browser
 
-![SS Network](img/network.jpg)
+![SS Network](img/network.JPG)
