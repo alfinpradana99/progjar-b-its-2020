@@ -17,7 +17,7 @@ NRP  : 05111740000191
 
 ### Request Browser
 
-![SS Browser](img/browser.jpg)
+![SS Browser](img/browser.JPG)
 
 ### Response Server
 
