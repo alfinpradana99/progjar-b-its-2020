@@ -52,4 +52,4 @@
 
 ## Hasil Performance
 
-![hasil](img/hasil)
+![hasil](img/hasil.JPG)
