@@ -7,11 +7,7 @@ from datetime import datetime
 class HttpServer:
 	def __init__(self):
 		self.sessions={}
-		self.types={}
-		self.types['.pdf']='application/pdf'
-		self.types['.jpg']='image/jpeg'
-		self.types['.txt']='text/plain'
-		self.types['.html']='text/html'
+
 	def response(self,kode=404,message='Not Found',messagebody='',headers={}):
 		tanggal = datetime.now().strftime('%c')
 		resp=[]
@@ -25,7 +21,7 @@ class HttpServer:
 		resp.append("\r\n")
 		resp.append("{}" . format(messagebody))
 		response_str=''
-		for i in resp:	
+		for i in resp:
 			response_str="{}{}" . format(response_str,i)
 		return response_str
 
@@ -45,21 +41,9 @@ class HttpServer:
 				return self.response(400,'Bad Request','',{})
 		except IndexError:
 			return self.response(400,'Bad Request','',{})
+
 	def http_get(self,object_address):
-		files = glob('./*')
-		thedir='.'
-		if thedir+object_address not in files:
-			return self.response(404,'Not Found','',{})
-		fp = open(thedir+object_address,'r')
-		isi = fp.read()
-		
-		fext = os.path.splitext(thedir+object_address)[1]
-		content_type = self.types[fext]
-		
-		headers={}
-		headers['Content-type']=content_type
-		
-		return self.response(200,'OK',isi,headers)
+		return self.response(200,'OK','<h1>SERVER HTTP</h1>',{})
 		
 			 	
 #>>> import os.path
