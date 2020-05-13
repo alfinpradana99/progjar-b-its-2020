@@ -8,7 +8,7 @@
 
 ### Thread
 
-![thread table](images/thread.png)
+![thread table](images/Thread.png)
 
 ## Hasil Test Apache-Benchmark Asynchronous Server 1000 Request
 
@@ -49,7 +49,7 @@
 
 ### Concurrency 25
 
-![t25](images/threadC25.png)
+![t25](images/thread25.png)
 
 ### Concurrency 50
 
